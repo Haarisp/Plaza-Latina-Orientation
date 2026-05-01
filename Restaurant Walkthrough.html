@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Plaza Latina — Restaurant Owner Orientation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF3E8;
+    --espresso: #3F2518;
+    --rust: #C25A30;
+    --gold: #D4A843;
+    --sage: #6B7C5E;
+    --warm-gray: #B8AFA5;
+    --card-bg: #FFFDF9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--espresso);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .header {
+    background-color: var(--espresso);
+    color: var(--cream);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px; right: -60px; bottom: -60px;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(212,168,67,0.04) 40px,
+      rgba(212,168,67,0.04) 80px
+    );
+    pointer-events: none;
+  }
+
+  .header-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 22px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .header h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--warm-gray);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap {
+    background: var(--espresso);
+    padding: 0 40px 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .progress-steps {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .step-pill {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(184,175,165,0.25);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .step-pill.active {
+    background: var(--gold);
+    color: var(--espresso);
+    border-color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* MAIN LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 64px;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--rust);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--espresso);
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid rgba(44,26,14,0.1);
+    border-radius: 4px;
+    padding: 32px 36px;
+    box-shadow: 0 2px 12px rgba(44,26,14,0.05);
+  }
+
+  .card p {
+    font-size: 15px;
+    color: #4A3728;
+    margin-bottom: 14px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  /* WELCOME CARD */
+  .welcome-card {
+    background: var(--espresso);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 40px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-card::after {
+    content: '🍽';
+    position: absolute;
+    right: 30px;
+    bottom: -10px;
+    font-size: 80px;
+    opacity: 0.12;
+  }
+
+  .welcome-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+    color: var(--gold);
+  }
+
+  .welcome-card p {
+    font-size: 15px;
+    color: rgba(249,244,236,0.8);
+    max-width: 620px;
+    line-height: 1.8;
+  }
+
+  /* RENT TABLE */
+  .rent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .rent-table th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    padding: 10px 16px;
+    border-bottom: 2px solid rgba(44,26,14,0.08);
+  }
+
+  .rent-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(44,26,14,0.06);
+    color: #3D2B1F;
+    vertical-align: top;
+  }
+
+  .rent-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .rent-table tr:hover td {
+    background: rgba(212,168,67,0.05);
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .tag-due { background: rgba(192,82,42,0.1); color: var(--rust); }
+  .tag-late { background: rgba(192,82,42,0.2); color: var(--rust); }
+  .tag-method { background: rgba(107,124,94,0.12); color: var(--sage); }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(44,26,14,0.06);
+    font-size: 15px;
+    color: #3D2B1F;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li.checked {
+    opacity: 0.45;
+    text-decoration: line-through;
+    color: var(--warm-gray);
+  }
+
+  .check-box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(44,26,14,0.2);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: white;
+  }
+
+  .checklist li.checked .check-box {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .check-box::after {
+    content: '';
+    display: none;
+  }
+
+  .checklist li.checked .check-box::after {
+    display: block;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-2px);
+  }
+
+  .checklist li .item-label {
+    flex: 1;
+  }
+
+  .checklist li .item-note {
+    font-size: 12px;
+    color: var(--warm-gray);
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* SIGNAGE SECTION */
+  .signage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .signage-grid { grid-template-columns: 1fr; }
+  }
+
+  .signage-card {
+    border: 1px solid rgba(44,26,14,0.1);
+    border-radius: 4px;
+    padding: 22px;
+    background: white;
+  }
+
+  .signage-card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .signage-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--espresso);
+  }
+
+  .signage-card p {
+    font-size: 13px;
+    color: #6B5A4E;
+    line-height: 1.6;
+  }
+
+  .highlight-box {
+    border-left: 3px solid var(--gold);
+    background: rgba(212,168,67,0.07);
+    padding: 18px 22px;
+    border-radius: 0 4px 4px 0;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #4A3728;
+  }
+
+  .highlight-box strong {
+    color: var(--espresso);
+    font-weight: 500;
+  }
+
+  /* CONTACTS */
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .contact-card {
+    border: 1px solid rgba(44,26,14,0.1);
+    border-radius: 4px;
+    padding: 22px;
+    background: white;
+    text-align: center;
+  }
+
+  .contact-card .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--espresso);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  .contact-card h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 2px;
+  }
+
+  .contact-card .role {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .contact-card a {
+    font-size: 13px;
+    color: var(--rust);
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--espresso);
+    color: var(--warm-gray);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+    margin-top: 80px;
+  }
+
+  .footer span {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  /* PRINT */
+  @media print {
+    .progress-bar-wrap { display: none; }
+    .section { opacity: 1; transform: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">New Tenant Orientation Guide</div>
+  <h1>Welcome to<br><em>Plaza Latina.</em></h1>
+  <p class="header-sub">Everything you need to get settled, pay on time, and make your space your own.</p>
+</div>
+
+<!-- PROGRESS NAV -->
+<div class="progress-bar-wrap">
+  <div class="progress-steps">
+    <div class="step-pill active">01 Welcome</div>
+    <div class="step-pill">02 Rent</div>
+    <div class="step-pill">03 Signage</div>
+    <div class="step-pill">04 Checklist</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- WELCOME -->
+  <div class="welcome-card">
+    <h2>We're glad you're here.</h2>
+    <p>This guide walks you through everything you need to know as a new restaurant tenant at Plaza Latina — from how and when to pay rent, to expressing your brand through signage, to making sure nothing falls through the cracks during move-in. Read through at your own pace, check off your tasks, and don't hesitate to reach out to management with any questions.</p>
+  </div>
+
+  <!-- SECTION 1: RENT SYSTEM -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-number">1</div>
+      <div class="section-title">Rent Payment System</div>
+    </div>
+    <div class="card">
+      <p>All rent payments must be made through the <strong>AppFolio tenant portal</strong> — no other payment methods are accepted. Rent is due on the <strong>1st of each month</strong>. Receipts are accessible anytime through your AppFolio portal.</p>
+
+      <div class="highlight-box">
+        💡 <strong>Pro tip:</strong> Set up auto-pay directly in AppFolio so rent goes out automatically on the 1st — no reminders needed, total peace of mind.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SIGNAGE -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-number">2</div>
+      <div class="section-title">Signage — Be Creative, Be You</div>
+    </div>
+    <div class="card">
+      <p>Your sign is the first thing customers see. We <strong>encourage creativity</strong> — bold colors, unique fonts, neon, dimensional lettering, murals, and illuminated signage are all welcome. Here's what you need to know:</p>
+
+      <div class="signage-grid">
+        <div class="signage-card">
+          <span class="icon">🎨</span>
+          <h4>Design Freedom</h4>
+          <p>Express your brand fully. Choose your own fonts, colors, materials, and style. Neon signs, hand-painted boards, illuminated boxes — all fair game.</p>
+        </div>
+        <div class="signage-card">
+          <span class="icon">📐</span>
+          <h4>Size & Placement</h4>
+          <p>Signs must fit within your designated fascia area. Dimensions are in your lease addendum. No signage may extend beyond your unit boundaries.</p>
+        </div>
+        <div class="signage-card">
+          <span class="icon">✅</span>
+          <h4>Approval Required</h4>
+          <p>Submit a design mockup (PDF or image) to management for written approval <strong>before</strong> ordering or installing. Turnaround is typically 3–5 business days.</p>
+        </div>
+        <div class="signage-card">
+          <span class="icon">🚫</span>
+          <h4>What's Not Allowed</h4>
+          <p>Flashing strobe lights and signs on shared walls or the parking lot are not permitted.</p>
+        </div>
+        <div class="signage-card">
+          <span class="icon">🔧</span>
+          <h4>Installation</h4>
+          <p>Use a licensed sign contractor. Proof of insurance is required before installation. Coordinate with management on timing to avoid utility conflicts.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        🌟 <strong>We want your storefront to stand out.</strong> Distinctive, well-designed signage benefits the whole plaza. Don't be shy — make it memorable.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: BASIC BREAKDOWN -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-number">3</div>
+      <div class="section-title">Quick-Reference Breakdown</div>
+    </div>
+    <div class="card">
+      <table class="rent-table">
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lease Start</strong></td>
+            <td>Your lease begins on the date signed. Prorated rent applies if you move in mid-month.</td>
+          </tr>
+          <tr>
+            <td><strong>Security Deposit</strong></td>
+            <td>Held by management. Returned within 60 days of lease end, less any deductions.</td>
+          </tr>
+          <tr>
+            <td><strong>Operating Hours</strong></td>
+            <td>Thu & Mon 11AM–8PM · Fri–Sun 10AM–8PM. You must remain open during all building hours.</td>
+          </tr>
+          <tr>
+            <td><strong>Trash & Grease</strong></td>
+            <td>Use designated dumpsters only. Grease trap maintenance is tenant's responsibility.</td>
+          </tr>
+          <tr>
+            <td><strong>Health Permits</strong></td>
+            <td>Obtain all city/county permits before opening. Management does not handle licensing.</td>
+          </tr>
+          <tr>
+            <td><strong>Shared Spaces</strong></td>
+            <td>Parking lot, sidewalks, and common areas are maintained by management. Do not use for storage.</td>
+          </tr>
+          <tr>
+            <td><strong>Maintenance Requests</strong></td>
+            <td>Submit via tenant portal or call the office. Emergencies (gas, fire, water) call 911 first, then management.</td>
+          </tr>
+          <tr>
+            <td><strong>Subletting</strong></td>
+            <td>Not permitted without written consent from management.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: CHECKLIST -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-number">4</div>
+      <div class="section-title">Move-In Checklist</div>
+    </div>
+    <div class="card">
+      <p style="margin-bottom: 20px; font-size: 14px; color: var(--warm-gray);">Tap each item to mark it complete.</p>
+      <ul class="checklist" id="checklist">
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Sign and return lease agreement
+            <span class="item-note">Provide a copy to management and retain one for yourself</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Pay first month's rent and security deposit
+            <span class="item-note">First payment is made in person with management</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Set up AppFolio tenant portal account
+            <span class="item-note">All rent payments must be made through AppFolio — enroll in auto-pay while you're there</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Complete move-in unit inspection with management
+            <span class="item-note">Document and photograph any pre-existing damage</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Obtain city/county business license
+            <span class="item-note">Required before opening to the public</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Pass health department inspection
+            <span class="item-note">Post permit in a visible location inside the restaurant</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Submit signage design for management approval
+            <span class="item-note">PDF or image mockup required — allow 3–5 business days</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Schedule and complete sign installation
+            <span class="item-note">Use licensed contractor; provide proof of insurance to management</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Set up utilities (gas, electric, water, internet)
+            <span class="item-note">Transfer accounts to your name before opening</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Confirm grease trap installation and service schedule
+            <span class="item-note">Tenant's responsibility; keep service records on file</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Confirm emergency contacts are saved
+            <span class="item-note">Management office, after-hours line, and local fire/health departments</span>
+          </div>
+        </li>
+        <li onclick="toggle(this)">
+          <div class="check-box"></div>
+          <div class="item-label">
+            Review and confirm insurance requirements with management
+            <span class="item-note">Provide certificate of general liability insurance naming plaza as additional insured</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Welcome to Plaza Latina.</span> We're rooting for your success. Let's build something great together.
+</div>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle('checked');
+  }
+
+  // Animate progress steps on scroll (simple version)
+  const pills = document.querySelectorAll('.step-pill');
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Array.from(sections).indexOf(entry.target);
+        pills.forEach(p => p.classList.remove('active'));
+        if (pills[idx]) pills[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
