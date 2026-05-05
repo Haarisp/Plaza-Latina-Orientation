@@ -26,7 +26,6 @@
     line-height: 1.7;
   }
 
-  /* HEADER */
   .header {
     background-color: var(--espresso);
     color: var(--cream);
@@ -40,13 +39,7 @@
     content: '';
     position: absolute;
     top: -60px; left: -60px; right: -60px; bottom: -60px;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(212,168,67,0.04) 40px,
-      rgba(212,168,67,0.04) 80px
-    );
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(212,168,67,0.04) 40px, rgba(212,168,67,0.04) 80px);
     pointer-events: none;
   }
 
@@ -69,10 +62,7 @@
     margin-bottom: 16px;
   }
 
-  .header h1 em {
-    color: var(--gold);
-    font-style: italic;
-  }
+  .header h1 em { color: var(--gold); font-style: italic; }
 
   .header-sub {
     font-size: 15px;
@@ -81,7 +71,6 @@
     margin: 0 auto;
   }
 
-  /* PROGRESS BAR */
   .progress-bar-wrap {
     background: var(--espresso);
     padding: 0 40px 30px;
@@ -91,7 +80,6 @@
 
   .progress-steps {
     display: flex;
-    gap: 0;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
@@ -117,14 +105,12 @@
     font-weight: 500;
   }
 
-  /* MAIN LAYOUT */
   .container {
     max-width: 860px;
     margin: 0 auto;
     padding: 0 24px 80px;
   }
 
-  /* SECTION */
   .section {
     margin-top: 64px;
     opacity: 0;
@@ -136,12 +122,8 @@
   .section:nth-child(2) { animation-delay: 0.2s; }
   .section:nth-child(3) { animation-delay: 0.3s; }
   .section:nth-child(4) { animation-delay: 0.4s; }
-  .section:nth-child(5) { animation-delay: 0.5s; }
-  .section:nth-child(6) { animation-delay: 0.6s; }
 
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
   .section-label {
     display: flex;
@@ -151,8 +133,7 @@
   }
 
   .section-number {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     border-radius: 50%;
     background: var(--rust);
     color: white;
@@ -187,7 +168,6 @@
 
   .card p:last-child { margin-bottom: 0; }
 
-  /* WELCOME CARD */
   .welcome-card {
     background: var(--espresso);
     color: var(--cream);
@@ -201,8 +181,7 @@
   .welcome-card::after {
     content: '🍽';
     position: absolute;
-    right: 30px;
-    bottom: -10px;
+    right: 30px; bottom: -10px;
     font-size: 80px;
     opacity: 0.12;
   }
@@ -221,7 +200,6 @@
     line-height: 1.8;
   }
 
-  /* RENT TABLE */
   .rent-table {
     width: 100%;
     border-collapse: collapse;
@@ -245,13 +223,8 @@
     vertical-align: top;
   }
 
-  .rent-table tr:last-child td {
-    border-bottom: none;
-  }
-
-  .rent-table tr:hover td {
-    background: rgba(212,168,67,0.05);
-  }
+  .rent-table tr:last-child td { border-bottom: none; }
+  .rent-table tr:hover td { background: rgba(212,168,67,0.05); }
 
   .tag {
     display: inline-block;
@@ -267,10 +240,7 @@
   .tag-late { background: rgba(192,82,42,0.2); color: var(--rust); }
   .tag-method { background: rgba(107,124,94,0.12); color: var(--sage); }
 
-  /* CHECKLIST */
-  .checklist {
-    list-style: none;
-  }
+  .checklist { list-style: none; }
 
   .checklist li {
     display: flex;
@@ -293,8 +263,7 @@
   }
 
   .check-box {
-    width: 22px;
-    height: 22px;
+    width: 22px; height: 22px;
     border: 2px solid rgba(44,26,14,0.2);
     border-radius: 3px;
     flex-shrink: 0;
@@ -311,23 +280,17 @@
     border-color: var(--sage);
   }
 
-  .check-box::after {
-    content: '';
-    display: none;
-  }
+  .check-box::after { content: ''; display: none; }
 
   .checklist li.checked .check-box::after {
     display: block;
-    width: 12px;
-    height: 7px;
+    width: 12px; height: 7px;
     border-left: 2px solid white;
     border-bottom: 2px solid white;
     transform: rotate(-45deg) translateY(-2px);
   }
 
-  .checklist li .item-label {
-    flex: 1;
-  }
+  .checklist li .item-label { flex: 1; }
 
   .checklist li .item-note {
     font-size: 12px;
@@ -336,7 +299,6 @@
     display: block;
   }
 
-  /* SIGNAGE SECTION */
   .signage-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -355,11 +317,7 @@
     background: white;
   }
 
-  .signage-card .icon {
-    font-size: 28px;
-    margin-bottom: 10px;
-    display: block;
-  }
+  .signage-card .icon { font-size: 28px; margin-bottom: 10px; display: block; }
 
   .signage-card h4 {
     font-family: 'Playfair Display', serif;
@@ -369,11 +327,7 @@
     color: var(--espresso);
   }
 
-  .signage-card p {
-    font-size: 13px;
-    color: #6B5A4E;
-    line-height: 1.6;
-  }
+  .signage-card p { font-size: 13px; color: #6B5A4E; line-height: 1.6; }
 
   .highlight-box {
     border-left: 3px solid var(--gold);
@@ -385,63 +339,8 @@
     color: #4A3728;
   }
 
-  .highlight-box strong {
-    color: var(--espresso);
-    font-weight: 500;
-  }
+  .highlight-box strong { color: var(--espresso); font-weight: 500; }
 
-  /* CONTACTS */
-  .contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-  }
-
-  .contact-card {
-    border: 1px solid rgba(44,26,14,0.1);
-    border-radius: 4px;
-    padding: 22px;
-    background: white;
-    text-align: center;
-  }
-
-  .contact-card .avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--espresso);
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 12px;
-  }
-
-  .contact-card h4 {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--espresso);
-    margin-bottom: 2px;
-  }
-
-  .contact-card .role {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--warm-gray);
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .contact-card a {
-    font-size: 13px;
-    color: var(--rust);
-    text-decoration: none;
-  }
-
-  /* FOOTER */
   .footer {
     background: var(--espresso);
     color: var(--warm-gray);
@@ -457,7 +356,6 @@
     font-style: italic;
   }
 
-  /* PRINT */
   @media print {
     .progress-bar-wrap { display: none; }
     .section { opacity: 1; transform: none; animation: none; }
@@ -466,14 +364,12 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-badge">New Tenant Orientation Guide</div>
   <h1>Welcome to<br><em>Plaza Latina.</em></h1>
-  <p class="header-sub">Everything you need to get settled, pay on time, and make your space your own.</p>
+  <p class="header-sub">A straightforward guide to everything that matters — your space, your setup, and the freedom to build something great.</p>
 </div>
 
-<!-- PROGRESS NAV -->
 <div class="progress-bar-wrap">
   <div class="progress-steps">
     <div class="step-pill active">01 Welcome</div>
@@ -483,16 +379,14 @@
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <!-- WELCOME -->
   <div class="welcome-card">
     <h2>We're glad you're here.</h2>
     <p>This guide walks you through everything you need to know as a new restaurant tenant at Plaza Latina — from how and when to pay rent, to expressing your brand through signage, to making sure nothing falls through the cracks during move-in. Read through at your own pace, check off your tasks, and don't hesitate to reach out to management with any questions.</p>
   </div>
 
-  <!-- SECTION 1: RENT SYSTEM -->
+  <!-- SECTION 1: RENT -->
   <div class="section">
     <div class="section-label">
       <div class="section-number">1</div>
@@ -500,7 +394,6 @@
     </div>
     <div class="card">
       <p>All rent payments must be made through the <strong>AppFolio tenant portal</strong> — no other payment methods are accepted. Rent is due on the <strong>1st of each month</strong>. Receipts are accessible anytime through your AppFolio portal.</p>
-
       <div class="highlight-box">
         💡 <strong>Pro tip:</strong> Set up auto-pay directly in AppFolio so rent goes out automatically on the 1st — no reminders needed, total peace of mind.
       </div>
@@ -515,7 +408,6 @@
     </div>
     <div class="card">
       <p>Your sign is the first thing customers see. We <strong>encourage creativity</strong> — bold colors, unique fonts, neon, dimensional lettering, murals, and illuminated signage are all welcome. Here's what you need to know:</p>
-
       <div class="signage-grid">
         <div class="signage-card">
           <span class="icon">🎨</span>
@@ -543,18 +435,17 @@
           <p>Use a licensed sign contractor. Proof of insurance is required before installation. Coordinate with management on timing to avoid utility conflicts.</p>
         </div>
       </div>
-
       <div class="highlight-box">
-        🌟 <strong>We want your storefront to stand out.</strong> Distinctive, well-designed signage benefits the whole plaza. Don't be shy — make it memorable.
+        🌟 <strong>We want your storefront to stand out.</strong> Distinctive, well-designed signage benefits the whole plaza. Don't be shy — make it memorable. Just remember: written landlord approval is required for any sign on the exterior or common areas, and installation must be done by a licensed contractor.
       </div>
     </div>
   </div>
 
-  <!-- SECTION 3: BASIC BREAKDOWN -->
+  <!-- SECTION 3: RULES & GUIDELINES -->
   <div class="section">
     <div class="section-label">
       <div class="section-number">3</div>
-      <div class="section-title">Quick-Reference Breakdown</div>
+      <div class="section-title">Rules & Guidelines</div>
     </div>
     <div class="card">
       <table class="rent-table">
@@ -566,32 +457,44 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Lease Start</strong></td>
-            <td>Your lease begins on the date signed. Prorated rent applies if you move in mid-month.</td>
-          </tr>
-          <tr>
-            <td><strong>Security Deposit</strong></td>
-            <td>Held by management. Returned within 60 days of lease end, less any deductions.</td>
-          </tr>
-          <tr>
             <td><strong>Operating Hours</strong></td>
-            <td>Thu & Mon 11AM–8PM · Fri–Sun 10AM–8PM. You must remain open during all building hours.</td>
+            <td>Thu & Mon 11AM–8PM · Fri–Sun 10AM–8PM. Must remain open all building hours — repeated violations may result in eviction.</td>
           </tr>
           <tr>
-            <td><strong>Trash & Grease</strong></td>
-            <td>Use designated dumpsters only. Grease trap maintenance is tenant's responsibility.</td>
+            <td><strong>Closure Notice</strong></td>
+            <td>Post a sign on premises and notify landlord in writing within 3 business days of any closure. Emergencies excluded.</td>
           </tr>
           <tr>
-            <td><strong>Health Permits</strong></td>
-            <td>Obtain all city/county permits before opening. Management does not handle licensing.</td>
+            <td><strong>Advertising</strong></td>
+            <td>Advertising payment is mandatory and based on square footage. Rent will not be accepted without the advertising payment — non-payment constitutes default.</td>
           </tr>
           <tr>
-            <td><strong>Shared Spaces</strong></td>
-            <td>Parking lot, sidewalks, and common areas are maintained by management. Do not use for storage.</td>
+            <td><strong>Parking</strong></td>
+            <td>Park at outer lot edges only. Register all vehicles with landlord. No double parking — violators will be towed.</td>
           </tr>
           <tr>
-            <td><strong>Maintenance Requests</strong></td>
-            <td>Submit via tenant portal or call the office. Emergencies (gas, fire, water) call 911 first, then management.</td>
+            <td><strong>Conduct</strong></td>
+            <td>No smoking, loud music, or nuisance activity. Disruptive work requires 24-hr written notice. Children must be supervised at all times.</td>
+          </tr>
+          <tr>
+            <td><strong>Safety</strong></td>
+            <td>No hazardous materials without a permit. No animals without written consent (seeing-eye dogs excepted).</td>
+          </tr>
+          <tr>
+            <td><strong>Maintenance</strong></td>
+            <td>Keep your space clean. Use licensed contractors for all repairs. Tenant holds landlord harmless for maintenance-related incidents.</td>
+          </tr>
+          <tr>
+            <td><strong>Health Permits & Licensing</strong></td>
+            <td>As a restaurant operator, you are fully responsible for obtaining all required city and county health permits before opening. This includes food handler certifications, food establishment permits, and any applicable fire or ventilation inspections. Management does not handle licensing on your behalf — start this process early as timelines vary.</td>
+          </tr>
+          <tr>
+            <td><strong>Food Safety</strong></td>
+            <td>All food preparation and storage must comply with local health codes at all times. Post your health permit in a visible location inside the restaurant as required by law.</td>
+          </tr>
+          <tr>
+            <td><strong>Grease & Waste</strong></td>
+            <td>Use designated dumpsters only. Grease trap installation and regular maintenance are the tenant's responsibility — keep all service records on file. Improper grease disposal is a lease violation.</td>
           </tr>
           <tr>
             <td><strong>Subletting</strong></td>
@@ -701,7 +604,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   <span>Welcome to Plaza Latina.</span> We're rooting for your success. Let's build something great together.
 </div>
@@ -711,7 +613,6 @@
     el.classList.toggle('checked');
   }
 
-  // Animate progress steps on scroll (simple version)
   const pills = document.querySelectorAll('.step-pill');
   const sections = document.querySelectorAll('.section');
 
